@@ -37,7 +37,7 @@ const Login = () => {
   return (
     <>
       <Head>
-        <title>Login | Material Kit</title>
+        <title>Login</title>
       </Head>
       <Box
         component="main"
@@ -73,7 +73,7 @@ const Login = () => {
                 gutterBottom
                 variant="body2"
               >
-                Sign in on the internal platform
+                Sign in on Customer Dashboard
               </Typography>
             </Box>
             <Grid
@@ -162,7 +162,7 @@ const Login = () => {
                 type="submit"
                 variant="contained"
               >
-                Sign In Now
+                Sign In
               </Button>
             </Box>
             <Typography

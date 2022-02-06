@@ -8,7 +8,7 @@ const Projects = () => (
   <>
     <Head>
       <title>
-        Projects | Material Kit
+        Projects 
       </title>
     </Head>
     <Box

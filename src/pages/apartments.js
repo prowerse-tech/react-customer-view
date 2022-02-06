@@ -8,7 +8,7 @@ const Apartments = () => (
   <>
     <Head>
       <title>
-        Apartmnents | Material Kit
+        Apartmnents 
       </title>
     </Head>
     <Box
