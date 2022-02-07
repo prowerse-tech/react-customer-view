@@ -1,5 +1,5 @@
 import { Doughnut } from 'react-chartjs-2';
-import { Box, Card, CardContent, CardHeader, Divider, Typography, useTheme } from '@mui/material';
+import { Box, Card, CardContent, CardHeader, Divider, StepIcon, Typography, useTheme } from '@mui/material';
 import LaptopMacIcon from '@mui/icons-material/LaptopMac';
 import PhoneIcon from '@mui/icons-material/Phone';
 import TabletIcon from '@mui/icons-material/Tablet';
@@ -10,14 +10,14 @@ export const TrafficByDevice = (props) => {
   const data = {
     datasets: [
       {
-        data: [63, 15, 22],
-        backgroundColor: ['#3F51B5', '#e53935', '#FB8C00'],
+        data: [70, 30],
+        backgroundColor: ['#3F51B5', '#e53935'],
         borderWidth: 8,
         borderColor: '#FFFFFF',
         hoverBorderColor: '#FFFFFF'
       }
     ],
-    labels: ['Desktop', 'Tablet', 'Mobile']
+    labels: ['Available', 'Leased']
   };
 
   const options = {
@@ -44,28 +44,22 @@ export const TrafficByDevice = (props) => {
 
   const devices = [
     {
-      title: 'Desktop',
-      value: 63,
-      icon: LaptopMacIcon,
+      title: 'Available',
+      value: 70,
+      icon: TabletIcon,
       color: '#3F51B5'
     },
     {
-      title: 'Tablet',
-      value: 15,
+      title: 'Leased',
+      value: 30,
       icon: TabletIcon,
       color: '#E53935'
-    },
-    {
-      title: 'Mobile',
-      value: 23,
-      icon: PhoneIcon,
-      color: '#FB8C00'
     }
   ];
 
   return (
     <Card {...props}>
-      <CardHeader title="Traffic by Device" />
+      <CardHeader title="Available Units" />
       <Divider />
       <CardContent>
         <Box

@@ -7,6 +7,8 @@ import { TasksProgress } from '../components/dashboard/tasks-progress';
 import { TotalCustomers } from '../components/dashboard/total-customers';
 import { TotalProfit } from '../components/dashboard/total-profit';
 import { TrafficByDevice } from '../components/dashboard/traffic-by-device';
+import { LatestOrders } from '../components/dashboard/latest-orders';
+import { LatestProducts } from '../components/dashboard/latest-products';
 
 const Dashboard = () => (
     <>
@@ -53,15 +55,6 @@ const Dashboard = () => (
               xs={12}
             >
               <TasksProgress />
-            </Grid>
-            <Grid
-              item
-              xl={3}
-              lg={3}
-              sm={6}
-              xs={12}
-            >
-              <TotalProfit sx={{ height: '100%' }} />
             </Grid>
             <Grid
               item
