@@ -34,10 +34,10 @@ reatc-customer-view
 		├── _app.js
 		├── _document.js
 		├── account.js
-		├── customers.js
+		├── appartments.js
 		├── index.js
 		├── login.js
-		├── products.js
+		├── projects.js
 		├── register.js
 		└── settings.js
 ```
