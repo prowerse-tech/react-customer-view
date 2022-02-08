@@ -28,7 +28,7 @@ import {
         >
           Projects
         </Typography>
-        <Box sx={{ m: 1 }}>
+        {/* <Box sx={{ m: 1 }}>
           <Button
             startIcon={(<UploadIcon fontSize="small" />)}
             sx={{ mr: 1 }}
@@ -72,7 +72,7 @@ import {
               />
             </Box>
           </CardContent>
-        </Card>
+        </Card> */}
       </Box>
     </Box>
   );

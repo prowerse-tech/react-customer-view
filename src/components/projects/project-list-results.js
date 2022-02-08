@@ -16,10 +16,8 @@ import {
 
 export const ProjectListResults = ({ customers, ...rest }) => {
   const [selectedCustomerIds, setSelectedCustomerIds] = useState([]);
-  const [limit, setLimit] = useState(5);
-  const [page, setPage] = useState(0);
-
-
+  const [page, setPage] = React.useState(0);
+  const [limit, setLimit] = React.useState(10);
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [projects, setProjects] = useState([]);
@@ -73,7 +71,8 @@ export const ProjectListResults = ({ customers, ...rest }) => {
   };
 
   const handleLimitChange = (event) => {
-    setLimit(event.target.value);
+    setLimit(parseInt(event.target.value, 10));
+    setPage(0);
   };
 
   const handlePageChange = (event, newPage) => {
@@ -116,7 +115,7 @@ export const ProjectListResults = ({ customers, ...rest }) => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {projects.slice(0, limit).map((project) => (
+              {projects.slice(page * limit, page * limit + limit).map((project) => (
                 <TableRow
                   hover
                   key={project.ProjectID}

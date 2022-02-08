@@ -15,10 +15,8 @@ import {
 
 export const ApartmentListResults = ({ customers, ...rest }) => {
   const [selectedCustomerIds, setSelectedCustomerIds] = useState([]);
-  const [limit, setLimit] = useState(10);
-  const [page, setPage] = useState(0);
-
-
+  const [page, setPage] = React.useState(0);
+  const [limit, setLimit] = React.useState(10);
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [apartments, setApartments] = useState([]);
@@ -72,7 +70,8 @@ export const ApartmentListResults = ({ customers, ...rest }) => {
   };
 
   const handleLimitChange = (event) => {
-    setLimit(event.target.value);
+    setLimit(parseInt(event.target.value, 10));
+    setPage(0);
   };
 
   const handlePageChange = (event, newPage) => {
@@ -130,7 +129,7 @@ export const ApartmentListResults = ({ customers, ...rest }) => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {apartments.slice(0, limit).map((apartment) => (
+              {apartments.slice(page * limit, page * limit + limit).map((apartment) => (
                 <TableRow
                   hover
                   key={apartment.id}

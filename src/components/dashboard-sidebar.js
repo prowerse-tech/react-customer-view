@@ -19,7 +19,7 @@ import { NavItem } from './nav-item';
 const items = [
   {
     href: '/dashboard',
-    icon: (<ChartBarIcon fontSize="small" />),
+    icon: (<UserIcon fontSize="small" />),
     title: 'Dashboard'
   },
   {
@@ -29,7 +29,7 @@ const items = [
   },
   {
     href: '/apartments',
-    icon: (<UsersIcon fontSize="small" />),
+    icon: (<ChartBarIcon fontSize="small" />),
     title: 'Apartments'
   },
   {

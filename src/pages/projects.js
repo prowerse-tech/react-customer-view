@@ -19,7 +19,7 @@ const Projects = () => (
       }}
     >
       <Container maxWidth={false}>
-        {/* <ProjectListToolbar /> */}
+        <ProjectListToolbar />
         <Box sx={{ mt: 3 }}>
           <ProjectListResults />
         </Box>
