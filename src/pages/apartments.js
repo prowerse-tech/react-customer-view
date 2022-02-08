@@ -19,7 +19,7 @@ const Apartments = () => (
       }}
     >
       <Container maxWidth={false}>
-        {/* <ApartmentListToolbar /> */}
+        <ApartmentListToolbar />
         <Box sx={{ mt: 3 }}>
           <ApartmentListResults />
         </Box>
