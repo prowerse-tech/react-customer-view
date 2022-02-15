@@ -2,18 +2,18 @@ import { Avatar, Box, Card, CardContent, Grid, LinearProgress, Typography } from
 import InsertChartIcon from '@mui/icons-material/InsertChartOutlined';
 import React, { useState, useEffect } from 'react';
 
-export const TasksProgress = (props) => {
+export const TotalProjects = (props) => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [apartments, setApartments] = useState([]);
+  const [projects, setProjects] = useState([]);
 
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/apartments")
+    fetch("http://127.0.0.1:8000/projects")
         .then(res => res.json())
         .then(
             (data) => {
                 setIsLoaded(true);
-                setApartments(data);
+                setProjects(data);
             },
             (error) => {
                 setIsLoaded(true);
@@ -39,14 +39,13 @@ export const TasksProgress = (props) => {
             gutterBottom
             variant="overline"
           >
-            Total Apartments
+            Total Projects
           </Typography>
           <Typography
             color="textPrimary"
             variant="h4"
           >
-            {/* 342 */}
-            {apartments.length}
+            {projects.length}
           </Typography>
         </Grid>
         <Grid item>

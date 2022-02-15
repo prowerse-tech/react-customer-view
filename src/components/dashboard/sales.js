@@ -2,9 +2,44 @@ import { Bar } from 'react-chartjs-2';
 import { Box, Button, Card, CardContent, CardHeader, Divider, useTheme } from '@mui/material';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
+import React, { useState, useEffect } from 'react';
 
-export const Sales = (props) => {
+export const Sales = () => {
   const theme = useTheme();
+
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [apartments, setApartments] = useState([]);
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    fetch("http://127.0.0.1:8000/apartments")
+        .then(res => res.json())
+        .then(
+            (data) => {
+                setIsLoaded(true);
+                setApartments(data);
+            },
+            (error) => {
+                setIsLoaded(true);
+                setError(error);
+            }
+        )
+  }, [])
+
+  useEffect(() => {
+    fetch("http://127.0.0.1:8000/projects")
+        .then(res => res.json())
+        .then(
+            (data) => {
+                setIsLoaded(true);
+                setProjects(data);
+            },
+            (error) => {
+                setIsLoaded(true);
+                setError(error);
+            }
+        )
+  }, [])
 
   const data = {
     datasets: [
@@ -14,7 +49,7 @@ export const Sales = (props) => {
         barThickness: 12,
         borderRadius: 4,
         categoryPercentage: 0.5,
-        data: [18, 5, 19, 27, 29, 19, 20],
+        data: apartments.map((apartment) => apartment.AppartmentFloor),
         label: 'This year',
         maxBarThickness: 10
       },
@@ -24,7 +59,7 @@ export const Sales = (props) => {
         barThickness: 12,
         borderRadius: 4,
         categoryPercentage: 0.5,
-        data: [11, 20, 12, 29, 30, 25, 13],
+        data: projects.map((project) => project.ProjectTotalApartments),
         label: 'Last year',
         maxBarThickness: 10
       }
@@ -82,7 +117,7 @@ export const Sales = (props) => {
   };
 
   return (
-    <Card {...props}>
+    <Card>
       <CardHeader
         action={(
           <Button

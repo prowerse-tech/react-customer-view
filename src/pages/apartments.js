@@ -8,7 +8,7 @@ const Apartments = () => (
   <>
     <Head>
       <title>
-        Apartmnents 
+        Apartments 
       </title>
     </Head>
     <Box

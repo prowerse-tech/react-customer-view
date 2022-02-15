@@ -3,14 +3,52 @@ import { Box, Card, CardContent, CardHeader, Divider, StepIcon, Typography, useT
 import LaptopMacIcon from '@mui/icons-material/LaptopMac';
 import PhoneIcon from '@mui/icons-material/Phone';
 import TabletIcon from '@mui/icons-material/Tablet';
+import React, { useState, useEffect } from 'react';
 
 export const TrafficByDevice = (props) => {
   const theme = useTheme();
 
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [apartments, setApartments] = useState([]);
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    fetch("http://127.0.0.1:8000/apartments")
+        .then(res => res.json())
+        .then(
+            (data) => {
+                setIsLoaded(true);
+                setApartments(data);
+            },
+            (error) => {
+                setIsLoaded(true);
+                setError(error);
+            }
+        )
+  }, [])
+
+  useEffect(() => {
+    fetch("http://127.0.0.1:8000/projects")
+        .then(res => res.json())
+        .then(
+            (data) => {
+                setIsLoaded(true);
+                setProjects(data);
+            },
+            (error) => {
+                setIsLoaded(true);
+                setError(error);
+            }
+        )
+  }, [])
+
+  const totalApartments = apartments.length;
+  const totalProjects = projects.length;
+
   const data = {
     datasets: [
       {
-        data: [70, 30],
+        data: [totalApartments, totalProjects],
         backgroundColor: ['#3F51B5', '#e53935'],
         borderWidth: 8,
         borderColor: '#FFFFFF',
