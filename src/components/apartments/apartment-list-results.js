@@ -132,7 +132,7 @@ export const ApartmentListResults = ({ customers, ...rest }) => {
               {apartments.slice(page * limit, page * limit + limit).map((apartment) => (
                 <TableRow
                   hover
-                  key={apartment.id}
+                  key={apartment.ApartmentID}
                   selected={selectedCustomerIds.indexOf(apartment.id) !== -1}
                 >
                   {/* <TableCell padding="checkbox">
@@ -211,8 +211,4 @@ export const ApartmentListResults = ({ customers, ...rest }) => {
       />
     </Card>
   );
-};
-
-ApartmentListResults.propTypes = {
-  customers: PropTypes.array.isRequired
 };
