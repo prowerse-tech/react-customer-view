@@ -44,7 +44,7 @@ export const TotalCustomers = (props) => (
           pt: 2
         }}
       >
-        {/* <ArrowUpwardIcon color="success" /> */}
+        <ArrowUpwardIcon color="success" />
         <Typography
           variant="body2"
           sx={{

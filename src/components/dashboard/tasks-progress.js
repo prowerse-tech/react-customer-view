@@ -45,7 +45,6 @@ export const TasksProgress = (props) => {
             color="textPrimary"
             variant="h4"
           >
-            {/* 342 */}
             {apartments.length}
           </Typography>
         </Grid>
