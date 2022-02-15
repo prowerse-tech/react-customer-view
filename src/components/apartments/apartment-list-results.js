@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import PerfectScrollbar from 'react-perfect-scrollbar';
-import PropTypes from 'prop-types';
 import {
   Box,
   Card,
@@ -85,17 +84,6 @@ export const ApartmentListResults = ({ customers, ...rest }) => {
           <Table>
             <TableHead>
               <TableRow>
-                {/* <TableCell padding="checkbox">
-                  <Checkbox
-                    checked={selectedCustomerIds.length === customers.length}
-                    color="primary"
-                    indeterminate={
-                      selectedCustomerIds.length > 0
-                      && selectedCustomerIds.length < customers.length
-                    }
-                    onChange={handleSelectAll}
-                  />
-                </TableCell> */}
                 <TableCell>
                   Apartment ID
                 </TableCell>
@@ -135,13 +123,6 @@ export const ApartmentListResults = ({ customers, ...rest }) => {
                   key={apartment.ApartmentID}
                   selected={selectedCustomerIds.indexOf(apartment.id) !== -1}
                 >
-                  {/* <TableCell padding="checkbox">
-                    <Checkbox
-                      checked={selectedCustomerIds.indexOf(project.id) !== -1}
-                      onChange={(event) => handleSelectOne(event, project.id)}
-                      value="true"
-                    />
-                  </TableCell> */}
                   <TableCell>
                       {apartment.ApartmentID}
                   </TableCell>
@@ -152,12 +133,6 @@ export const ApartmentListResults = ({ customers, ...rest }) => {
                         display: 'flex'
                       }}
                     >
-                      {/* <Avatar
-                        src={project.avatarUrl}
-                        sx={{ mr: 2 }}
-                      >
-                        {getInitials(project.name)}
-                      </Avatar> */}
                       <Typography
                         color="textPrimary"
                         variant="body1"
@@ -169,9 +144,6 @@ export const ApartmentListResults = ({ customers, ...rest }) => {
                   <TableCell>
                     {apartment.ApartmentAddress}
                   </TableCell>
-                  {/* <TableCell>
-                    {`${customer.address.city}, ${customer.address.state}, ${customer.address.country}`}
-                  </TableCell> */}
                   <TableCell>
                     {apartment.NumberOfRooms}
                   </TableCell>
@@ -189,7 +161,6 @@ export const ApartmentListResults = ({ customers, ...rest }) => {
                   </TableCell>
                   <TableCell>
                     {apartment.ScrapingDate}
-                    {/* {format(project.ScrapingDate, 'dd/MM/yyyy')} */}
                   </TableCell>
                   <TableCell>
                     {apartment.Project}

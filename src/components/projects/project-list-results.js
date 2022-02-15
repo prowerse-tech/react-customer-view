@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import PerfectScrollbar from 'react-perfect-scrollbar';
-import PropTypes from 'prop-types';
-import format from 'date-fns/format';
 import {
   Box,
   Card,
@@ -11,7 +9,6 @@ import {
   TableHead,
   TablePagination,
   TableRow,
-  Typography
 } from '@mui/material';
 
 export const ProjectListResults = ({ customers, ...rest }) => {
@@ -86,17 +83,6 @@ export const ProjectListResults = ({ customers, ...rest }) => {
           <Table>
             <TableHead>
               <TableRow>
-                {/* <TableCell padding="checkbox">
-                  <Checkbox
-                    checked={selectedCustomerIds.length === customers.length}
-                    color="primary"
-                    indeterminate={
-                      selectedCustomerIds.length > 0
-                      && selectedCustomerIds.length < customers.length
-                    }
-                    onChange={handleSelectAll}
-                  />
-                </TableCell> */}
                 <TableCell>
                   Project ID
                 </TableCell>
