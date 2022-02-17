@@ -1,9 +1,39 @@
 import { Avatar, Box, Card, CardContent, Grid, Typography } from '@mui/material';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import MoneyIcon from '@mui/icons-material/Money';
+import React, { useState, useEffect } from 'react';
 
-export const Budget = (props) => (
-  <Card
+export const Budget = (props) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [statuses, setStatuses] = useState([]);
+
+
+  useEffect(() => {
+    fetch("http://127.0.0.1:8000/status")
+        .then(res => res.json())
+        .then(
+            (data) => {
+                setIsLoaded(true);
+                setStatuses(data);
+            },
+            (error) => {
+                setIsLoaded(true);
+                setError(error);
+            }
+        )
+  }, [])
+
+
+  function ccyFormat(num) {
+    return `${num.toFixed(2)}`;
+  }
+  function subtotal(statuses) {
+    return statuses.map(({ SalesPrice }) => SalesPrice).reduce((sum, i) => sum + i, 0);
+  }
+  const invoiceSubtotal = subtotal(statuses);
+
+  return (
+    <Card
     sx={{ height: '100%' }}
     {...props}
   >
@@ -25,7 +55,8 @@ export const Budget = (props) => (
             color="textPrimary"
             variant="h4"
           >
-            $24k
+            {/* $24k */}
+            {ccyFormat(invoiceSubtotal)}
           </Typography>
         </Grid>
         <Grid item>
@@ -66,4 +97,5 @@ export const Budget = (props) => (
       </Box>
     </CardContent>
   </Card>
-);
+  );
+};
