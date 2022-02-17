@@ -21,9 +21,19 @@ const items = [
     title: 'Projects'
   },
   {
+    href: '/projectAvailability',
+    icon: (<UsersIcon fontSize="small" />),
+    title: 'Project Availability'
+  },
+  {
     href: '/apartments',
     icon: (<ChartBarIcon fontSize="small" />),
     title: 'Apartments'
+  },
+  {
+    href: '/apartmentStatus',
+    icon: (<ChartBarIcon fontSize="small" />),
+    title: 'Apartment Status'
   },
   {
     href: '/account',
