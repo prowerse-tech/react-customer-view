@@ -16,7 +16,6 @@ export const ApartmentListResults = ({ customers, ...rest }) => {
   const [selectedCustomerIds, setSelectedCustomerIds] = useState([]);
   const [page, setPage] = React.useState(0);
   const [limit, setLimit] = React.useState(10);
-  const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [apartments, setApartments] = useState([]);
 
@@ -29,10 +28,6 @@ export const ApartmentListResults = ({ customers, ...rest }) => {
                 setIsLoaded(true);
                 setApartments(data);
             },
-            (error) => {
-                setIsLoaded(true);
-                setError(error);
-            }
         )
   }, [])
 

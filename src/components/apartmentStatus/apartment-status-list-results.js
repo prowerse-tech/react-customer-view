@@ -14,7 +14,6 @@ import {
 export const ApartmentStatusListResults = ({ customers, ...rest }) => {
   const [page, setPage] = React.useState(0);
   const [limit, setLimit] = React.useState(10);
-  const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [statuses, setApartmentStauses] = useState([]);
 
@@ -26,10 +25,6 @@ export const ApartmentStatusListResults = ({ customers, ...rest }) => {
                 setIsLoaded(true);
                 setApartmentStauses(data);
             },
-            (error) => {
-                setIsLoaded(true);
-                setError(error);
-            }
         )
   }, [])
 

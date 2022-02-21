@@ -16,10 +16,6 @@ export const Budget = (props) => {
                 setIsLoaded(true);
                 setStatuses(data);
             },
-            (error) => {
-                setIsLoaded(true);
-                setError(error);
-            }
         )
   }, [])
 

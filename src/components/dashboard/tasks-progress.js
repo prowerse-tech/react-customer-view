@@ -15,10 +15,6 @@ export const TasksProgress = (props) => {
                 setIsLoaded(true);
                 setApartments(data);
             },
-            (error) => {
-                setIsLoaded(true);
-                setError(error);
-            }
         )
   }, [])
 
