@@ -21,7 +21,6 @@ export const Sales = () => {
             },
             (error) => {
                 setIsLoaded(true);
-                setError(error);
             }
         )
   }, [])
@@ -36,7 +35,6 @@ export const Sales = () => {
             },
             (error) => {
                 setIsLoaded(true);
-                setError(error);
             }
         )
   }, [])

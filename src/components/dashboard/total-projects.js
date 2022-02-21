@@ -17,7 +17,6 @@ export const TotalProjects = (props) => {
             },
             (error) => {
                 setIsLoaded(true);
-                setError(error);
             }
         )
   }, [])

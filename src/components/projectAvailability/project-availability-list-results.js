@@ -14,7 +14,6 @@ import {
 export const ProjectAvailabilityListResults = ({ customers, ...rest }) => {
   const [page, setPage] = React.useState(0);
   const [limit, setLimit] = React.useState(10);
-  const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [availabilities, setProjectAvailabilities] = useState([]);
 
@@ -29,7 +28,6 @@ export const ProjectAvailabilityListResults = ({ customers, ...rest }) => {
             },
             (error) => {
                 setIsLoaded(true);
-                setError(error);
             }
         )
   }, [])

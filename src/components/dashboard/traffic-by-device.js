@@ -20,7 +20,6 @@ export const TrafficByDevice = (props) => {
             },
             (error) => {
                 setIsLoaded(true);
-                setError(error);
             }
         )
   }, [])
@@ -35,7 +34,6 @@ export const TrafficByDevice = (props) => {
             },
             (error) => {
                 setIsLoaded(true);
-                setError(error);
             }
         )
   }, [])
