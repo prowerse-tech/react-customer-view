@@ -18,6 +18,9 @@ export const TrafficByDevice = (props) => {
                 setIsLoaded(true);
                 setApartments(data);
             },
+            (error) => {
+                setIsLoaded(true);
+            }
         )
   }, [])
 
@@ -29,6 +32,9 @@ export const TrafficByDevice = (props) => {
                 setIsLoaded(true);
                 setProjects(data);
             },
+            (error) => {
+                setIsLoaded(true);
+            }
         )
   }, [])
 

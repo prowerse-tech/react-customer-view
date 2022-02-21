@@ -28,6 +28,9 @@ export const ApartmentListResults = ({ customers, ...rest }) => {
                 setIsLoaded(true);
                 setApartments(data);
             },
+            (error) => {
+                setIsLoaded(true);
+            }
         )
   }, [])
 

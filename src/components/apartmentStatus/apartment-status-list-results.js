@@ -25,6 +25,9 @@ export const ApartmentStatusListResults = ({ customers, ...rest }) => {
                 setIsLoaded(true);
                 setApartmentStauses(data);
             },
+            (error) => {
+                setIsLoaded(true);
+            }
         )
   }, [])
 

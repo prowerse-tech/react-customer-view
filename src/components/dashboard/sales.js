@@ -19,6 +19,9 @@ export const Sales = () => {
                 setIsLoaded(true);
                 setApartments(data);
             },
+            (error) => {
+                setIsLoaded(true);
+            }
         )
   }, [])
 
@@ -30,6 +33,9 @@ export const Sales = () => {
                 setIsLoaded(true);
                 setProjects(data);
             },
+            (error) => {
+                setIsLoaded(true);
+            }
         )
   }, [])
 

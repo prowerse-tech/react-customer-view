@@ -27,6 +27,9 @@ export const ProjectListResults = ({ customers, ...rest }) => {
                 setIsLoaded(true);
                 setProjects(data);
             },
+            (error) => {
+                setIsLoaded(true);
+            }
         )
   }, [])
 
