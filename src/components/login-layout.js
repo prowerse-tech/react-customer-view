@@ -26,7 +26,7 @@ export const LoginLayout = (props) => {
   const router = useRouter();
   const formik = useFormik({
     initialValues: {
-      email: 'demo@devias.io',
+      email: 'user@domain.com',
       password: 'Password123'
     },
     validationSchema: Yup.object({
@@ -44,7 +44,7 @@ export const LoginLayout = (props) => {
           'Password is required')
     }),
     onSubmit: () => {
-      if(formik.values.email == 'demo@devias.io' && formik.values.password == 'Password123') 
+      if(formik.values.email == 'user@domain.com' && formik.values.password == 'Password123') 
       {
         router.push('/dashboard');
       }

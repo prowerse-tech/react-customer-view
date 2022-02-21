@@ -9,7 +9,7 @@ const Login = () => {
   const router = useRouter();
   const formik = useFormik({
     initialValues: {
-      email: 'demo@devias.io',
+      email: 'user@domain.com',
       password: 'Password123'
     },
     validationSchema: Yup.object({
